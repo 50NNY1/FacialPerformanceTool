@@ -8,9 +8,6 @@ Within this project I aim to explore the symbiotic relationship between gesture 
 line 308 in the jsui object in the main tab of the patch may have to be commented out, 
 more on this inside the patch.
 
-faceOSC windows version is included in my submission, as this is my OS of choice; below is a link to the repo for download mac versions (apologies there is no linux version)
-https://github.com/kylemcdonald/ofxFaceTracker/releases
-
 ## dependancies:
 
 **flucoma max external** (not in package manager)
@@ -20,6 +17,7 @@ https://github.com/flucoma/flucoma-max
 (available in package manager)
 
 **faceOSC**
+https://github.com/kylemcdonald/ofxFaceTracker/releases
 
 ## citations:
 

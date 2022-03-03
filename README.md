@@ -1,15 +1,18 @@
 
 # Gestural Live Performance Tool - Sonny Holland 2022
 
-Within this project I aim to explore the symbiotic relationship between gesture and sound. Gesture specifically emanant of the face. Emotions, linear gesture are all considered in the dsp implemented in this project; this data sonification excercise pulls from a corpus of segmentations, and will run individual grains through granular processing, vocoders and alot more.
+## what does it do?
 
-## troubleshooting:
+Within this project I aim to explore the symbiotic relationships between gesture and sound; 
+gesture specifically emanant of the face. Exploring how to pull emotional content 
+(within the sonic domain), through application of, data structures, regression, and DSP practice; 
+this project serves as a means of facilitating the toolset needed to allow the to composer represent 
+an emotion with an interface as hands off as frowning and immediately being drawn into aural dread, or 
+smiling and being embraced by granular euphoria.
 
-line 308 in the jsui object in the main tab of the patch may have to be commented out, 
-more on this inside the patch.
+## requirements:
 
-faceOSC windows version is included in my submission, as this is my OS of choice; below is a link to the repo for download mac versions (apologies there is no linux version)
-https://github.com/kylemcdonald/ofxFaceTracker/releases
+* line 308 of the js script inside the jsui object found in `main.maxpat` may need to be commented out; more on this inside the patch.
 
 ## dependancies:
 

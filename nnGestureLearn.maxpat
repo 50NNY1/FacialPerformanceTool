@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 42.0, 85.0, 1852.0, 929.0 ],
+		"rect" : [ 34.0, 77.0, 1852.0, 929.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -39,6 +39,30 @@
 		"subpatcher_template" : "",
 		"showontab" : 1,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-73",
+					"linecount" : 4,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 84.0, 1099.0, 150.0, 62.0 ],
+					"text" : "Train the neural net. And also get it to make predictions based on the live facial data stream."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-66",
+					"linecount" : 46,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 564.0, 620.0, 256.0, 655.0 ],
+					"text" : "mlp.regressor attributes:\n* hidden 3 - specifies one hidden layer with 3 neurons, neuron being the mathmatical operation being passed through the network through a multitude of other operations and then the sum to the activation function for other neurons, collectively they create the neural network.\n\n* activation 1 - defines what activation function the hidden layers detailed above are run through, the integer \"1\" signifies we are to use the logistic sigmoid function as our activation function\n\n* outputactivation 1 - uses logistic sigmoid function as activation function the output layer of the neural net will use\n\n*batchsize 1 - details how the number of data points to use as reference for amendments to the NN's parameters when incorrect guesses are made during training.\n\n*maxiter 500 - in simple english, the running through the entire dataset 500 times, the higher the slower but more accurate, 500 iterations led to around 2 minutes runitme, even then too much for a musician haha.\n\n*learnrate 0.1 - scales how drastically the NN will adjust its internal parameters at every incorrect guess in training, 0.1 is actually quite fast, but accuracy was granted by the relatively high amount of iterations\n\n* validation 0.1 - signifies 10% of the dataset used in training is not used to make predictions, but instead to check if guesses are correct. Think of this as the equivalent of the purpose of past papers in revising for an exam. \n\n*momentum 0.1 - scales data smoothing on adjustments made to the NN's internal parameters when incorrect guesses are made.\n"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-97",
 					"maxclass" : "newobj",
@@ -106,101 +130,6 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 253.0, 1035.0, 89.0, 22.0 ],
 					"text" : "print NeuralNet"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-92",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 673.0, 589.25, 150.0, 20.0 ],
-					"text" : "**this may not be used**"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-86",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 634.0, 744.25, 32.0, 22.0 ],
-					"text" : "print"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-91",
-					"linecount" : 9,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 891.0, 654.25, 150.0, 131.0 ],
-					"text" : "whilst values generated in my program are already normalized to a range of 0. to 1. for those using datasets which aren't normalized to this range... FEAR NOT, flucoma's genius is here to save your time."
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-87",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 634.0, 650.25, 228.0, 22.0 ],
-					"text" : "fittransform facedata facedataNormalized"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-75",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 667.0, 744.25, 39.0, 22.0 ],
-					"text" : "dump"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-72",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 634.0, 717.25, 99.0, 22.0 ],
-					"text" : "route fittransform"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-66",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 634.0, 780.5, 190.0, 22.0 ],
-					"text" : "fluid.dataset~ facedataNormalized"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-64",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 634.0, 683.25, 203.0, 22.0 ],
-					"text" : "fluid.normalize~ @min 0. @max 1."
 				}
 
 			}
@@ -339,21 +268,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-82",
-					"linecount" : 2,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 1183.0, 113.0, 150.0, 34.0 ],
-					"presentation" : 1,
-					"presentation_linecount" : 4,
-					"presentation_rect" : [ 284.0, 172.5, 68.0, 62.0 ],
-					"text" : "print dataset - purely for debug"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-79",
 					"maxclass" : "message",
 					"numinlets" : 2,
@@ -368,21 +282,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-80",
-					"linecount" : 2,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 1126.0, 122.0, 150.0, 34.0 ],
-					"presentation" : 1,
-					"presentation_linecount" : 4,
-					"presentation_rect" : [ 284.0, 87.0, 71.75, 62.0 ],
-					"text" : "clear datasets: BEFORE TRAINING"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-77",
 					"maxclass" : "message",
 					"numinlets" : 2,
@@ -392,36 +291,6 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 306.0, 61.0, 35.0, 22.0 ],
 					"text" : "clear"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-74",
-					"linecount" : 23,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 1221.0, 59.5, 156.0, 324.0 ],
-					"presentation" : 1,
-					"presentation_linecount" : 10,
-					"presentation_rect" : [ 22.0, 383.0, 350.0, 144.0 ],
-					"text" : "please note: to train with your own face, it is advised to sit about 30 cm away from your webcam, as that allows various data scalings to still allow 0 to 1 movement without trunication.\nalso when writing ur datasets to disk, be sure to postpend the filename with .json as this process is not automatic.\n\nALSO!!! Please bare in mind, if using my provided dataset examples, they are very lengthy, and your computer may freeze up, the process of training on my laptop can take around 2 minutes, so get a coffee or something idk."
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-78",
-					"linecount" : 2,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 1166.0, 132.0, 150.0, 34.0 ],
-					"presentation" : 1,
-					"presentation_linecount" : 2,
-					"presentation_rect" : [ 394.0, 266.0, 150.0, 34.0 ],
-					"text" : "bangs when NN has sucessfully trained."
 				}
 
 			}
@@ -465,60 +334,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-54",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 1137.0, 108.0, 150.0, 20.0 ],
-					"presentation" : 1,
-					"presentation_linecount" : 2,
-					"presentation_rect" : [ 50.0, 197.0, 61.0, 34.0 ],
-					"text" : "record dataset"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-40",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 1131.0, 86.0, 150.0, 20.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 246.0, 322.0, 79.0, 20.0 ],
-					"text" : "emotions dict"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-26",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 1151.0, 108.0, 150.0, 20.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 58.0, 322.0, 53.0, 20.0 ],
-					"text" : "face dict"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-44",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 1126.0, 108.0, 150.0, 20.0 ],
-					"presentation" : 1,
-					"presentation_linecount" : 2,
-					"presentation_rect" : [ 130.5, 292.0, 99.0, 34.0 ],
-					"text" : "bang to train NN ."
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-38",
 					"maxclass" : "button",
 					"numinlets" : 1,
@@ -528,46 +343,6 @@
 					"patching_rect" : [ 263.0, 600.0, 24.0, 24.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 163.0, 249.0, 37.0, 37.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-35",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 1137.0, 77.0, 150.0, 20.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 246.0, 250.5, 80.0, 20.0 ],
-					"text" : "emotions dict"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-32",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 1145.0, 83.0, 150.0, 20.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 58.0, 249.0, 53.0, 20.0 ],
-					"text" : "face dict"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-19",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 1089.0, 146.0, 150.0, 20.0 ],
-					"presentation" : 1,
-					"presentation_linecount" : 2,
-					"presentation_rect" : [ 50.0, 101.0, 69.0, 34.0 ],
-					"text" : "begin predictions"
 				}
 
 			}
@@ -731,18 +506,6 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 163.5, 1000.0, 66.0, 22.0 ],
 					"text" : "0.045316"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-50",
-					"linecount" : 2,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 33.0, 955.0, 150.0, 34.0 ],
-					"text" : "and train/call from neural network"
 				}
 
 			}
@@ -1166,23 +929,7 @@
 					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 589.25, 542.0, 475.75 ],
-					"proportion" : 0.5
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"angle" : 270.0,
-					"bgcolor" : [ 0.513725490196078, 0.513725490196078, 0.513725490196078, 1.0 ],
-					"id" : "obj-67",
-					"maxclass" : "panel",
-					"mode" : 0,
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 1194.0, 113.0, 128.0, 128.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 45.5, 237.0, 80.0, 128.0 ],
+					"patching_rect" : [ 16.0, 584.25, 811.0, 714.75 ],
 					"proportion" : 0.5
 				}
 
@@ -1205,6 +952,176 @@
 			}
 , 			{
 				"box" : 				{
+					"id" : "obj-82",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 456.0, 714.0, 150.0, 34.0 ],
+					"presentation" : 1,
+					"presentation_linecount" : 4,
+					"presentation_rect" : [ 284.0, 172.5, 68.0, 62.0 ],
+					"text" : "print dataset - purely for debug"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-80",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 399.0, 723.0, 150.0, 34.0 ],
+					"presentation" : 1,
+					"presentation_linecount" : 4,
+					"presentation_rect" : [ 284.0, 87.0, 71.75, 62.0 ],
+					"text" : "clear datasets: BEFORE TRAINING"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-74",
+					"linecount" : 23,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 494.0, 660.5, 156.0, 324.0 ],
+					"presentation" : 1,
+					"presentation_linecount" : 10,
+					"presentation_rect" : [ 22.0, 383.0, 351.0, 144.0 ],
+					"text" : "please note: to train with your own face, it is advised to sit about 30 cm away from your webcam, as that allows various data scalings to still allow 0 to 1 movement without trunication.\nalso when writing ur datasets to disk, be sure to postpend the filename with .json as this process is not automatic.\n\nALSO!!! Please bare in mind, if using my provided dataset examples, they are very lengthy, and your computer may freeze up, the process of training on my laptop can take around 2 minutes, so get a coffee or something idk."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-78",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 439.0, 733.0, 150.0, 34.0 ],
+					"presentation" : 1,
+					"presentation_linecount" : 2,
+					"presentation_rect" : [ 394.0, 266.0, 150.0, 34.0 ],
+					"text" : "bangs when NN has sucessfully trained."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-54",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 410.0, 709.0, 150.0, 20.0 ],
+					"presentation" : 1,
+					"presentation_linecount" : 2,
+					"presentation_rect" : [ 50.0, 197.0, 61.0, 34.0 ],
+					"text" : "record dataset"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-40",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 404.0, 687.0, 150.0, 20.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 246.0, 322.0, 79.0, 20.0 ],
+					"text" : "emotions dict"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-26",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 424.0, 709.0, 150.0, 20.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 58.0, 322.0, 53.0, 20.0 ],
+					"text" : "face dict"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-44",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 399.0, 709.0, 150.0, 20.0 ],
+					"presentation" : 1,
+					"presentation_linecount" : 2,
+					"presentation_rect" : [ 130.5, 292.0, 99.0, 34.0 ],
+					"text" : "bang to train NN ."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-35",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 410.0, 678.0, 150.0, 20.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 246.0, 250.5, 80.0, 20.0 ],
+					"text" : "emotions dict"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-32",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 418.0, 684.0, 150.0, 20.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 58.0, 249.0, 53.0, 20.0 ],
+					"text" : "face dict"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-19",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 362.0, 747.0, 150.0, 20.0 ],
+					"presentation" : 1,
+					"presentation_linecount" : 2,
+					"presentation_rect" : [ 50.0, 101.0, 69.0, 34.0 ],
+					"text" : "begin predictions"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"angle" : 270.0,
+					"bgcolor" : [ 0.513725490196078, 0.513725490196078, 0.513725490196078, 1.0 ],
+					"id" : "obj-67",
+					"maxclass" : "panel",
+					"mode" : 0,
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 467.0, 714.0, 128.0, 128.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 45.5, 237.0, 80.0, 128.0 ],
+					"proportion" : 0.5
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"angle" : 270.0,
 					"bgcolor" : [ 0.513725490196078, 0.513725490196078, 0.513725490196078, 1.0 ],
 					"id" : "obj-71",
@@ -1212,7 +1129,7 @@
 					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1173.0, 71.0, 128.0, 128.0 ],
+					"patching_rect" : [ 446.0, 672.0, 128.0, 128.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 238.0, 237.0, 103.0, 128.0 ],
 					"proportion" : 0.5
@@ -1228,23 +1145,9 @@
 					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1173.0, 77.0, 128.0, 128.0 ],
+					"patching_rect" : [ 446.0, 678.0, 128.0, 128.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 33.75, 29.0, 334.5, 349.0 ],
-					"proportion" : 0.5
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"angle" : 270.0,
-					"bgcolor" : [ 0.772549019607843, 0.772549019607843, 0.772549019607843, 1.0 ],
-					"id" : "obj-89",
-					"maxclass" : "panel",
-					"mode" : 0,
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 601.0, 614.0, 452.0, 216.0 ],
 					"proportion" : 0.5
 				}
 
@@ -1500,14 +1403,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-87", 0 ],
-					"midpoints" : [ 295.5, 686.0, 584.0, 686.0, 584.0, 647.0 ],
-					"source" : [ "obj-52", 2 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-42", 0 ],
 					"midpoints" : [ 282.0, 1004.0, 563.0, 1004.0, 563.0, 13.0, 618.5, 13.0 ],
 					"source" : [ "obj-55", 0 ]
@@ -1551,13 +1446,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-72", 0 ],
-					"source" : [ "obj-64", 2 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-85", 0 ],
 					"source" : [ "obj-65", 1 ]
 				}
@@ -1583,29 +1471,6 @@
 					"destination" : [ "obj-23", 0 ],
 					"midpoints" : [ 265.5, 483.0, 174.0, 483.0, 174.0, 513.0, 177.0, 513.0 ],
 					"source" : [ "obj-70", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-75", 0 ],
-					"order" : 0,
-					"source" : [ "obj-72", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-86", 0 ],
-					"order" : 1,
-					"source" : [ "obj-72", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-66", 0 ],
-					"source" : [ "obj-75", 0 ]
 				}
 
 			}
@@ -1666,20 +1531,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-66", 0 ],
-					"source" : [ "obj-86", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-64", 0 ],
-					"source" : [ "obj-87", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-81", 0 ],
 					"source" : [ "obj-93", 0 ]
 				}
@@ -1729,10 +1580,6 @@
 			}
 , 			{
 				"name" : "fluid.buf2list.mxe64",
-				"type" : "mx64"
-			}
-, 			{
-				"name" : "fluid.libmanipulation.mxe64",
 				"type" : "mx64"
 			}
  ],

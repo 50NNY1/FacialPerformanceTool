@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 42.0, 85.0, 1852.0, 929.0 ],
+		"rect" : [ 26.0, 85.0, 1852.0, 929.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -40,6 +40,18 @@
 		"showontab" : 1,
 		"title" : "Face Track OSC Recieve",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-62",
+					"linecount" : 12,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 729.0, 272.0, 150.0, 186.0 ],
+					"text" : "this sub patch borrows heavily from Kyle Mcdonald's example patch of OSC routing with his FaceOSC application.\n\nKyle Mcdonald, FaceOSC, 2020, ofxFaceTracker, v1.2, github.com/kylemcdonald/ofxFaceTracker/releases\n\n"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-59",
 					"maxclass" : "newobj",

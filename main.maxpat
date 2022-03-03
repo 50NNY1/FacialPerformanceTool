@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 77.0, 1852.0, 929.0 ],
+		"rect" : [ 42.0, 85.0, 1852.0, 929.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -45,7 +45,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1081.333365559577942, 1342.666706681251526, 150.0, 103.0 ],
+					"patching_rect" : [ 1081.333365559577942, 1342.666706681251526, 154.0, 103.0 ],
 					"text" : "BEAP mixer object. recieves and sends signal, signal levls of each respective emotion's audio stream is controlled by the amount of that emotion displayed by the user."
 				}
 
@@ -2964,8 +2964,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 753.400000214576721, 452.0, 152.0, 103.0 ],
-					"text" : "here is the flucoma jsui object for visualising kdtree data structures and selecting entries. As well as our means of analysing and passing data into this data structure."
+					"patching_rect" : [ 729.0, 450.0, 373.0, 103.0 ],
+					"text" : "here is the flucoma jsui object for visualising kdtree data structures and selecting entries. As well as our means of analysing and passing data into this data structure. PLEASE NOTE: if you recieve an error from the jsui object along the lines of \"private function\", you will need to open up the fluid.plotter.js file, and comment out line 308, the error will go fine and the program will run absoloutely fine - this may not necessarily be an issue though..."
 				}
 
 			}
@@ -6648,8 +6648,8 @@
 		"parameters" : 		{
 			"obj-115::obj-41" : [ "ch2_mute", "Mute", 0 ],
 			"obj-107::obj-1::obj-28" : [ "Feedback[1]", "Feedback", 0 ],
-			"obj-115::obj-73" : [ "ch5_mute", "Mute", 0 ],
 			"obj-115::obj-43" : [ "ch2_pan", "Pan", 0 ],
+			"obj-115::obj-73" : [ "ch5_mute", "Mute", 0 ],
 			"obj-179::obj-66" : [ "Time", "Time", 0 ],
 			"obj-107::obj-5::obj-21" : [ "HPF", "HPF", 0 ],
 			"obj-115::obj-86" : [ "ch7_pan", "Pan", 0 ],
@@ -6684,11 +6684,11 @@
 			"obj-107::obj-5::obj-1" : [ "Mix[1]", "Mix", 0 ],
 			"obj-179::obj-62" : [ "Dry", "Dry", 0 ],
 			"obj-107::obj-1::obj-21" : [ "HPF[1]", "HPF", 0 ],
-			"obj-115::obj-22" : [ "ch1_pan", "Pan", 0 ],
 			"obj-115::obj-42" : [ "ch2_level", "2", 0 ],
+			"obj-115::obj-22" : [ "ch1_pan", "Pan", 0 ],
 			"obj-107::obj-5::obj-28" : [ "Feedback", "Feedback", 0 ],
-			"obj-115::obj-74" : [ "ch8_level", "8", 0 ],
 			"obj-115::obj-96" : [ "ch6_pan", "Pan", 0 ],
+			"obj-115::obj-74" : [ "ch8_level", "8", 0 ],
 			"obj-77::obj-28" : [ "Attack", "Attack", 0 ],
 			"obj-115::obj-84" : [ "ch6_mute", "Mute", 0 ],
 			"obj-77::obj-34" : [ "slider[3]", "slider[3]", 0 ],

@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 26.0, 85.0, 1852.0, 929.0 ],
+		"rect" : [ 42.0, 85.0, 1852.0, 929.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -40,13 +40,49 @@
 		"showontab" : 1,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-97",
+					"maxclass" : "newobj",
+					"numinlets" : 3,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 763.0, 292.0, 60.0, 22.0 ],
+					"text" : "clip 0.2 1."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-95",
+					"maxclass" : "newobj",
+					"numinlets" : 3,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 701.0, 292.0, 60.0, 22.0 ],
+					"text" : "clip 0.2 1."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-93",
+					"maxclass" : "newobj",
+					"numinlets" : 3,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 639.0, 292.0, 60.0, 22.0 ],
+					"text" : "clip 0.2 1."
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-96",
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 309.0, 629.0, 221.0, 22.0 ],
-					"text" : "Training Begun... may take a while, soz!"
+					"patching_rect" : [ 289.0, 632.0, 192.0, 22.0 ],
+					"text" : "Training Begun... may take a while"
 				}
 
 			}
@@ -262,7 +298,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 765.0, 303.0, 55.0, 22.0 ],
+					"patching_rect" : [ 763.0, 321.25, 55.0, 22.0 ],
 					"text" : "s neutral"
 				}
 
@@ -273,7 +309,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 704.5, 303.0, 37.0, 22.0 ],
+					"patching_rect" : [ 701.0, 321.25, 37.0, 22.0 ],
 					"text" : "s sad"
 				}
 
@@ -284,7 +320,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 639.0, 303.0, 51.0, 22.0 ],
+					"patching_rect" : [ 639.0, 319.0, 51.0, 22.0 ],
 					"text" : "s happy"
 				}
 
@@ -362,15 +398,15 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-74",
-					"linecount" : 13,
+					"linecount" : 23,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1221.0, 59.5, 156.0, 186.0 ],
+					"patching_rect" : [ 1221.0, 59.5, 156.0, 324.0 ],
 					"presentation" : 1,
-					"presentation_linecount" : 5,
-					"presentation_rect" : [ 22.0, 383.0, 347.0, 75.0 ],
-					"text" : "please note: to train with your own face, it is advised to sit about 30 cm away from your webcam, as that allows various data scalings to still allow 0 to 1 movement without trunication.\nalso when writing ur datasets to disk, be sure to postpend the filename with .json as this process is not automatic."
+					"presentation_linecount" : 10,
+					"presentation_rect" : [ 22.0, 383.0, 350.0, 144.0 ],
+					"text" : "please note: to train with your own face, it is advised to sit about 30 cm away from your webcam, as that allows various data scalings to still allow 0 to 1 movement without trunication.\nalso when writing ur datasets to disk, be sure to postpend the filename with .json as this process is not automatic.\n\nALSO!!! Please bare in mind, if using my provided dataset examples, they are very lengthy, and your computer may freeze up, the process of training on my laptop can take around 2 minutes, so get a coffee or something idk."
 				}
 
 			}
@@ -1429,21 +1465,21 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-81", 0 ],
+					"destination" : [ "obj-93", 0 ],
 					"source" : [ "obj-51", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-83", 0 ],
+					"destination" : [ "obj-95", 0 ],
 					"source" : [ "obj-51", 1 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-84", 0 ],
+					"destination" : [ "obj-97", 0 ],
 					"source" : [ "obj-51", 2 ]
 				}
 
@@ -1644,6 +1680,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-81", 0 ],
+					"source" : [ "obj-93", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-88", 0 ],
 					"source" : [ "obj-94", 0 ]
 				}
@@ -1651,9 +1694,23 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-83", 0 ],
+					"source" : [ "obj-95", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-88", 0 ],
-					"midpoints" : [ 318.5, 727.0, 439.0, 727.0, 439.0, 828.0, 439.0, 828.0, 439.0, 996.0, 249.0, 996.0, 249.0, 1032.0, 262.5, 1032.0 ],
+					"midpoints" : [ 298.5, 727.0, 439.0, 727.0, 439.0, 828.0, 439.0, 828.0, 439.0, 996.0, 249.0, 996.0, 249.0, 1032.0, 262.5, 1032.0 ],
 					"source" : [ "obj-96", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-84", 0 ],
+					"source" : [ "obj-97", 0 ]
 				}
 
 			}
